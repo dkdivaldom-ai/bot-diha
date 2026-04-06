@@ -9,12 +9,18 @@ app.post("/", async (req, res) => {
 
   if (!msg) return res.sendStatus(200);
 
-  if (msg === "!ping") {
-    console.log("Ping recebido");
-  }
+  const TOKEN = "57B440ABC2074371D955078C";
+  const INSTANCE = "3F136D96B998C2712EFBEE7630C0C065";
 
-  if (msg === "!menu") {
-    console.log("Menu enviado");
+  if (msg === "!ping") {
+    await fetch(`https://api.z-api.io/instances/${INSTANCE}/token/${TOKEN}/send-text`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        phone: numero,
+        message: "🏓 Pong!"
+      })
+    });
   }
 
   res.sendStatus(200);
