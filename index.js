@@ -1,3 +1,5 @@
+const fetch = require("node-fetch"); // 👈 AQUI (linha 1)
+
 const express = require("express");
 const app = express();
 
