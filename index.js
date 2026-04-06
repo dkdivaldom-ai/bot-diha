@@ -1,18 +1,11 @@
-const fetch = require("node-fetch"); // 👈 AQUI (linha 1)
-
-const express = require("express");
-const app = express();
-
-app.use(express.json());
-
 app.post("/", async (req, res) => {
-  const msg = req.body.text?.message;
+  const msg = req.body.message;
   const numero = req.body.phone;
 
   if (!msg) return res.sendStatus(200);
 
-  const TOKEN = "57B440ABC2074371D955078C";
   const INSTANCE = "3F136D96B998C2712EFBEE7630C0C065";
+  const TOKEN = "57B440ABC2074371D955078C";
 
   if (msg === "!ping") {
     await fetch(`https://api.z-api.io/instances/${INSTANCE}/token/${TOKEN}/send-text`, {
@@ -26,8 +19,4 @@ app.post("/", async (req, res) => {
   }
 
   res.sendStatus(200);
-});
-
-app.listen(3000, () => {
-  console.log("Bot rodando 🚀");
 });
