@@ -1,15 +1,12 @@
 {
-  "name": "diha-mxkl-bot",
+  "name": "bot-whatsapp",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "*",
-    "openai": "*",
-    "axios": "*",
-    "express": "*"
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
   }
 }
